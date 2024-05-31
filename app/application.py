@@ -1,7 +1,6 @@
 from pages.base_page import Page
 from pages.home_page import HomePage
 from pages.secondary_page import SecondaryPage
-#from sample_script import driver
 
 
 class Application:
