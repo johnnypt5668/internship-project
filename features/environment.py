@@ -7,15 +7,15 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from app.application import Application
 
-#from support.logger import looger
+from support.logger import logger
 
 def browser_init(context):
     """
     :param context: Behave context
     """
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     # driver_path = GeckoDriverManager().install()
     # service = Service(driver_path)
@@ -42,15 +42,15 @@ def browser_init(context):
     bs_key = 'd1eBUXaNs6SPRy1WUDmx'
     url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
 
-    options = Options()
-    bstack_options = {
-        'os' : 'Windows',
-        'osVersion' : '11',
-        'browserName': 'Chrome',
-        'sessionName': 'Verify Secondary pages can be accessed by user'
-    }
-    options.set_capability('bstack:options', bstack_options)
-    context.driver = webdriver.Remote(command_executor=url, options=options)
+    # options = Options()
+    # bstack_options = {
+    #     'os' : 'Windows',
+    #     'osVersion' : '11',
+    #     'browserName': 'Chrome',
+    #     'sessionName': 'Verify Secondary pages can be accessed by user'
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
 
 
     context.driver.maximize_window()
@@ -60,19 +60,21 @@ def browser_init(context):
     context.app = Application(context.driver)
 
 def before_scenario(context, scenario):
-    print('\nStarted scenario: ', scenario.name)
+    logger.info(f'Started scenario: {scenario.name}')
     browser_init(context)
 
 
 def before_step(context, step):
-    print('\nStarted step: ', step)
+    logger.info(f'Started step: {step}')
 
 
 def after_step(context, step):
     if step.status == 'failed':
-        print('\nStep failed: ', step)
+        logger.warning('Step failed: {step}')
 
 
 def after_scenario(context, feature):
     context.driver.delete_all_cookies()
     context.driver.quit()
+
+#behave -f allure_behave.formatter:AllureFormatter -o test_results/ features/tests/main_page_ui.feature
