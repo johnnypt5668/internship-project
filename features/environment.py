@@ -13,9 +13,9 @@ def browser_init(context):
     """
     :param context: Behave context
     """
-    driver_path = ChromeDriverManager().install()
-    service = Service(driver_path)
-    context.driver = webdriver.Chrome(service=service)
+    # driver_path = ChromeDriverManager().install()
+    # service = Service(driver_path)
+    # context.driver = webdriver.Chrome(service=service)
 
     # driver_path = GeckoDriverManager().install()
     # service = Service(driver_path)
@@ -25,6 +25,29 @@ def browser_init(context):
     # context.driver = webdriver.Firefox(service=service)
 
     # context.driver = webdriver.Safari()
+
+    # mobile_emulation = {"deviceName": "Nexus 5"}
+    # chrome_options = webdriver.ChromeOptions()
+    # chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+    # driver = webdriver.Remote(command_executor='http://127.0.0.1:4444/wd/hub',
+    #                           desired_capabilities=chrome_options.to_capabilities())
+
+    # mobile emulator (Selenium)
+    mobile_emulation = {"deviceName": "iPhone 12 Pro"}
+    chrome_options = Options()
+    chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+    driver_path = ChromeDriverManager().install()
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service, options=chrome_options)
+
+    # mobile_emulation = {
+    #     "deviceMetrics": {"width": 360, "height": 640, "pixelRatio": 3.0},
+    #     "userAgent": "Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 5 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19",
+    #     "clientHints": {"platform": "Android", "mobile": True}}
+    # chrome_options = Options()
+    # chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+    # driver = webdriver.Chrome(chrome_options=chrome_options)
+
 
     ### HEADLESS MODE ####
     # options = webdriver.ChromeOptions()

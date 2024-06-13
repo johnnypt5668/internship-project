@@ -20,3 +20,5 @@ class HomePage(Page):
     def click_secondary_button(self):
         self.driver.find_element(By.XPATH, "//a[@href='/secondary-listings']").click()
 
+    def click_mobile_secondary_button(self):
+        self.driver.find_element(By.XPATH, "//a[@wized='mobileTabGame']").click()
