@@ -8,8 +8,13 @@ def open_home(context):
     context.app.home_page.open_home()
 
 @when ('Enter email and password to login')
-def enter_email_and_password(context):
+def enter_email_and_password_to_login(context):
     context.app.home_page.enter_email_and_password("johnnypt@verizon.net", "JimiHendrix1942!")
+
+@when ('Enter email and password')
+def enter_email_and_password(context):
+    context.app.home_page.type_email_and_password("johnnypt@verizon.net", "JimiHendrix1942!")
+
 
 @then ('Click on Secondary button')
 def click_secondary_button(context):

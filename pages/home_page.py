@@ -22,3 +22,8 @@ class HomePage(Page):
 
     def click_mobile_secondary_button(self):
         self.driver.find_element(By.XPATH, "//a[@wized='mobileTabGame']").click()
+
+    def type_email_and_password(self, email, password):
+        self.input_text(email, *self.SIGNIN_PAGE_EMAIL_BOX)
+        self.input_text(password, *self.SIGNIN_PAGE_PASSWORD_BOX)
+        sleep(30)
