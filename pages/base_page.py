@@ -28,7 +28,7 @@ class Page:
         return current_window
 
     def switch_to_new_window(self):
-        self.wait.until(EC.new_window_is_opened)
+        self.wait.until(EC.new_window_is_opened())
         all_windows = self.driver.window_handles
         print('All windows: ', self.driver.window_handles)
         print('Switching to ', all_windows[1])

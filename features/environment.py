@@ -57,10 +57,10 @@ def browser_init(context):
     #     options=options,
     #     service=service)
 
-    ### BROWSERSTACK ###
-    # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
-    #     ### BROWSERSTACK ###
-    # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
+    # ### BROWSERSTACK ###
+    # # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
+    # #     ### BROWSERSTACK ###
+    # # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
     bs_user = 'johnharchar_osPBA6'
     bs_key = 'd1eBUXaNs6SPRy1WUDmx'
     url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
