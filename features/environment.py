@@ -13,14 +13,15 @@ def browser_init(context):
     """
     :param context: Behave context
     """
-    # driver_path = ChromeDriverManager().install()
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    #driver_path = './chromedriver.exe'  # for windows users
+    driver_path = './chromedriver'  # for macOS users
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
 
     # driver_path = GeckoDriverManager().install()
     # service = Service(driver_path)
     # context.driver =webdriver.Firefox(service=service)
-
+    #
     # service = Service(executable_path='/Users/johnharchar/Desktop/QA/python-selenium-automation/geckodriver')
     # context.driver = webdriver.Firefox(service=service)
 
@@ -61,19 +62,19 @@ def browser_init(context):
     # # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
     # #     ### BROWSERSTACK ###
     # # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
-    bs_user = 'johnharchar_osPBA6'
-    bs_key = 'd1eBUXaNs6SPRy1WUDmx'
-    url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
-
-    options = Options()
-    bstack_options = {
-        'os' : 'Windows',
-        'osVersion' : '11',
-        'browserName': 'Chrome',
-        'sessionName': 'Verify information can be input into registration page'
-    }
-    options.set_capability('bstack:options', bstack_options)
-    context.driver = webdriver.Remote(command_executor=url, options=options)
+    # bs_user = 'johnharchar_osPBA6'
+    # bs_key = 'd1eBUXaNs6SPRy1WUDmx'
+    # url = f'http://{bs_user}:{bs_key}@hub-cloud.browserstack.com/wd/hub'
+    #
+    # options = Options()
+    # bstack_options = {
+    #     'os' : 'Windows',
+    #     'osVersion' : '11',
+    #     'browserName': 'Chrome',
+    #     'sessionName': 'Verify information can be input into registration page'
+    # }
+    # options.set_capability('bstack:options', bstack_options)
+    # context.driver = webdriver.Remote(command_executor=url, options=options)
 
 
     context.driver.maximize_window()

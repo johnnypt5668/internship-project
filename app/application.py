@@ -2,6 +2,7 @@ from pages.base_page import Page
 from pages.home_page import HomePage
 from pages.registration_page import RegPage
 from pages.secondary_page import SecondaryPage
+from pages.settings_page import SettingsPage
 
 
 class Application:
@@ -10,3 +11,4 @@ class Application:
         self.home_page = HomePage(driver)
         self.reg_page = RegPage(driver)
         self.secondary_page = SecondaryPage(driver)
+        self.settings_page = SettingsPage(driver)

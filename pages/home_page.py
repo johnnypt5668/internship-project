@@ -9,6 +9,7 @@ class HomePage(Page):
     SIGNIN_PAGE_PASSWORD_BOX = (By.CSS_SELECTOR, "input[name='Password']")
     SIGNIN_BUTTON = (By.CSS_SELECTOR, "a[class='login-button w-button']")
     CONNECT_COMPANY_BUTTON = (By.CSS_SELECTOR, "div[class='get-free-period menu']")
+    SETTINGS_BUTTON = (By.CSS_SELECTOR, "a[href='/settings']")
 
 
     def open_home(self):
@@ -23,7 +24,10 @@ class HomePage(Page):
     def click_connect_company_button(self):
         self.click(*self.CONNECT_COMPANY_BUTTON)
 
-    def switch_to_company_page(self ):
+    def click_settings_button(self):
+        self.click(*self.SETTINGS_BUTTON)
+
+    def switch_to_new_page(self ):
         self.wait.until(EC.new_window_is_opened)
         all_windows = self.driver.window_handles
         self.driver.switch_to.window(all_windows[1])

@@ -20,9 +20,13 @@ def enter_email_and_password(context):
 def click_on_connect_button(context):
     context.app.home_page.click_connect_company_button()
 
-@then ('Switch to company window')
+@then ('Click on the Settings button')
+def click_on_settings_button(context):
+    context.app.home_page.click_settings_button()
+
+@then ('Switch to new window')
 def switch_to_new_page(context):
-    context.app.home_page.switch_to_company_page()
+    context.app.home_page.switch_to_new_page()
 
 
 @then ('Click on Secondary button')

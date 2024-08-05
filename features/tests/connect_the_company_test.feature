@@ -6,5 +6,5 @@ Feature: Connect the Company test
     Given Open the main page
     When Enter email and password to login
     Then Click on Connect the Company button
-    Then Switch to company window
+    Then Switch to new window
     Then Verify correct page is open
