@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from pages.base_page import Page
 from time import sleep
@@ -10,6 +11,8 @@ class HomePage(Page):
     SIGNIN_BUTTON = (By.CSS_SELECTOR, "a[class='login-button w-button']")
     CONNECT_COMPANY_BUTTON = (By.CSS_SELECTOR, "div[class='get-free-period menu']")
     SETTINGS_BUTTON = (By.CSS_SELECTOR, "a[href='/settings']")
+    MAIN_MENU_BUTTON = (By.CSS_SELECTOR, "a[href='/main-menu']")
+
 
 
     def open_home(self):
@@ -27,10 +30,18 @@ class HomePage(Page):
     def click_settings_button(self):
         self.click(*self.SETTINGS_BUTTON)
 
+
+
     def switch_to_new_page(self ):
         self.wait.until(EC.new_window_is_opened)
         all_windows = self.driver.window_handles
         self.driver.switch_to.window(all_windows[1])
+
+    def click_main_menu_button(self):
+        self.click(*self.MAIN_MENU_BUTTON)
+
+
+        
 
 
     def click_secondary_button(self):
@@ -41,8 +52,3 @@ class HomePage(Page):
 
     def type_email_and_password(self, email, password):
         self.input_text(email, *self.SIGNIN_PAGE_EMAIL_BOX)
-        self.input_text(password, *self.SIGNIN_PAGE_PASSWORD_BOX)
-        sleep(30)
-
-    def verify_correct_page(self):
-        self.verify_url('https://soft.reelly.io/book-presentation')

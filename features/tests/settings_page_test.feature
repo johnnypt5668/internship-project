@@ -14,3 +14,10 @@ Feature: Settings Page test
     Then Verify correct text is in name field
     Then Verify correct text is in phone number field
     Then Verify correct text is in compnay field
+
+
+  Scenario: Verify language can be changed on the main page to Russian
+    Given Open the main page
+    When Enter email and password to login
+    Then Click on the Settings button
+    Then Change language to Russiian with button on top right

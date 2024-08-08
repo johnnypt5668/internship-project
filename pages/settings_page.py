@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import Page
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
 from time import sleep
 
 class SettingsPage(Page):
@@ -9,6 +10,8 @@ class SettingsPage(Page):
     PROFILE_NAME_BOX = (By.NAME, "Fullname")
     PHONE_NUMBER_BOX = (By.NAME, "number")
     COMPANY_BOX = (By.NAME, 'Company-name')
+    LANGUAGE_BUTTON = (By.ID, "w-dropdown-toggle-0")
+
 
     def click_edit_profile_button(self):
         self.click(*self.EDIT_PROFILE_BUTTON)
@@ -17,6 +20,7 @@ class SettingsPage(Page):
         input_testname = self.find_element(*self.PROFILE_NAME_BOX)
         input_testname.clear()
         self.input_text("Bob", *self.PROFILE_NAME_BOX)
+        sleep(5)
 
     def input_number(self, number):
         input_testnumber = self.find_element(*self.PHONE_NUMBER_BOX)
@@ -29,12 +33,18 @@ class SettingsPage(Page):
         self.input_text("Charsky", *self.COMPANY_BOX)
 
     def verify_correct_name(self, name):
-        self.verify_text('Bob', self.PROFILE_NAME_BOX)
+        self.verify_input_field_text(name, *self.PROFILE_NAME_BOX)
 
     def verify_correct_number(self, number):
-        self.verify_text('732-251-5702', *self.PHONE_NUMBER_BOX)
+        self.verify_input_field_text(number, *self.PHONE_NUMBER_BOX)
 
     def verify_correct_company(self, company):
-        self.verify_text('Charsky', *self.COMPANY_BOX)
+        self.verify_input_field_text(company, *self.COMPANY_BOX)
+
+    def change_language(self):
+        lang_button = self.find_element(*self.LANGUAGE_BUTTON)
+
+        actions = ActionChains(self.driver)
+        actions.move_to_element(lang_button).perform()
 
 
