@@ -29,3 +29,11 @@ def verify_phone_number(context):
 @then('Verify correct text is in compnay field')
 def verify_test_company(context):
     context.app.settings_page.verify_correct_company('Charsky')
+
+@then('Change language to Russiian with button on top right')
+def change_language_to_russian(context):
+    context.app.settings_page.change_language()
+
+@then('Verify language has changed to RU')
+def verify_language_change_to__russian(context):
+    context.app.settings_page.verify_language_change()

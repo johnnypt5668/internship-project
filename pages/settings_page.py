@@ -11,6 +11,8 @@ class SettingsPage(Page):
     PHONE_NUMBER_BOX = (By.NAME, "number")
     COMPANY_BOX = (By.NAME, 'Company-name')
     LANGUAGE_BUTTON = (By.ID, "w-dropdown-toggle-0")
+    RU_BUTTON = (By.ID, "w-dropdown-list-0")
+    RU_MAIN_MENU = (By.XPATH, "//div[@class='menu-button-text' and text()='Главное меню']")
 
 
     def click_edit_profile_button(self):
@@ -46,5 +48,12 @@ class SettingsPage(Page):
 
         actions = ActionChains(self.driver)
         actions.move_to_element(lang_button).perform()
+        sleep(3)
+        self.click(*self.RU_BUTTON)
+        sleep(5)
 
+    def verify_language_change(self):
+        actual_text = self.find_element(*self.RU_MAIN_MENU).text
+        expected_text = 'Главное меню'
+        assert expected_text in actual_text, f"Expected {expected_text}, got {actual_text}"
 

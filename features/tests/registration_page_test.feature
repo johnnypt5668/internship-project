@@ -11,3 +11,5 @@ Feature: Registration Page Test
     Then Enter company name
     Then Select country
     Then Select company size
+
+
