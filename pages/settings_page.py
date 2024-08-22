@@ -13,10 +13,14 @@ class SettingsPage(Page):
     LANGUAGE_BUTTON = (By.ID, "w-dropdown-toggle-0")
     RU_BUTTON = (By.ID, "w-dropdown-list-0")
     RU_MAIN_MENU = (By.XPATH, "//div[@class='menu-button-text' and text()='Главное меню']")
+    PROJECT_BUTTON = (By.CSS_SELECTOR, "a[href='/add-a-project']")
 
 
     def click_edit_profile_button(self):
         self.click(*self.EDIT_PROFILE_BUTTON)
+
+    def click_project_button(self):
+        self.click(*self.PROJECT_BUTTON)
 
     def input_name(self, name):
         input_testname = self.find_element(*self.PROFILE_NAME_BOX)

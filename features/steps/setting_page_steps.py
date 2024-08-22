@@ -1,3 +1,4 @@
+
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.support.ui import WebDriverWait
@@ -37,3 +38,8 @@ def change_language_to_russian(context):
 @then('Verify language has changed to RU')
 def verify_language_change_to__russian(context):
     context.app.settings_page.verify_language_change()
+
+
+@then('Click on Add a Project button')
+def click_add_project(context):
+    context.app.settings_page.click_project_button()
