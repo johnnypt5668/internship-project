@@ -14,6 +14,11 @@ Feature: Project page test
     And Verify name is in text box
     And Verify company is in text box
     And Verify company role is in text box
+    Then Enter company
+    And Enter company role
+    And Verify name is in text box
+    And Verify company is in text box
+    And Verify company role is in text box
     Then Enter company age
     And Enter project country
     And Enter project name

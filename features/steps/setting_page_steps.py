@@ -43,3 +43,7 @@ def verify_language_change_to__russian(context):
 @then('Click on Add a Project button')
 def click_add_project(context):
     context.app.settings_page.click_project_button()
+
+@then('Click on the Community button')
+def click_community_button(context):
+    context.app.settings_page.click_community_button()

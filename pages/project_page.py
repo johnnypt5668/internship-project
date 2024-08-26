@@ -29,10 +29,10 @@ class ProjectPage(Page):
       self.input_text(company_role, *self.ROLE_TEXT_BOX)
 
    def verify_name_input(self, name_input):
-        self.verify_input_field_text(name_input, *self.NAME_TEXT_BOX)
+      self.verify_input_field_text(name_input, *self.NAME_TEXT_BOX)
 
    def verify_company_input(self, company_input):
-        self.verify_input_field_text(company_input, *self.COMPANY_TEXT_BOX)
+      self.verify_input_field_text(company_input, *self.COMPANY_TEXT_BOX)
 
    def verify_role_input(self, role_input):
       self.verify_input_field_text(role_input, *self.ROLE_TEXT_BOX)
@@ -54,3 +54,4 @@ class ProjectPage(Page):
 
    def app_button_clickable(self):
       self.wait_until_visible(self.APPLICATION_BUTTON)
+

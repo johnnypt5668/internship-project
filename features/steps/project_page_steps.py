@@ -53,5 +53,6 @@ def enter_company_email(context):
     context.app.project_page.enter_company_email("Charsky@gmail.com")
 
 @then('Verify Send an application button is clickable')
-def verify_app_buttob_clickable(context):
+def verify_app_button_clickable(context):
     context.app.project_page.app_button_clickable()
+
