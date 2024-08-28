@@ -15,7 +15,7 @@ class SettingsPage(Page):
     RU_MAIN_MENU = (By.XPATH, "//div[@class='menu-button-text' and text()='Главное меню']")
     PROJECT_BUTTON = (By.CSS_SELECTOR, "a[href='/add-a-project']")
     COMMUNITY_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Community']")
-    CONTACT_US_BUTTON = (By.CSS_SELECTOR, "a[href='/contact-us']")
+    CONTACT_US_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Contact us']")
 
 
     def click_edit_profile_button(self):
@@ -27,7 +27,7 @@ class SettingsPage(Page):
     def click_community_button(self):
         self.click(*self.COMMUNITY_BUTTON)
 
-    def click_contacus_us_button(self):
+    def click_contact_us_button(self):
         self.click(*self.CONTACT_US_BUTTON)
 
     def input_name(self, name):
