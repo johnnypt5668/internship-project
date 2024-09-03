@@ -51,3 +51,7 @@ def click_community_button(context):
 @then('Click on the Contact us button')
 def click_on_contact_us_button(context):
     context.app.settings_page.click_contact_us_button()
+
+@then('CLick on User Guide button')
+def click_on_user_guide_button(context):
+    context.app.settings_page.click_user_guide_button()

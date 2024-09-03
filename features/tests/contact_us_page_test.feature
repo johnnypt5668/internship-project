@@ -9,4 +9,4 @@ Feature: Contact Us page test
     And Click on the Contact us button
     Then Verify Contact us page is open
     Then Verify social media icons appear
-    And Verify Connect the company button on conact us page is clickable
+    And Verify Connect the company button on contact us page is clickable

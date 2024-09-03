@@ -6,6 +6,7 @@ from pages.project_page import ProjectPage
 from pages.registration_page import RegPage
 from pages.secondary_page import SecondaryPage
 from pages.settings_page import SettingsPage
+from pages.user_guide_page import UserGuidePage
 
 
 class Application:
@@ -14,7 +15,8 @@ class Application:
         self.community_page = CommunityPage(driver)
         self.contact_us_page = ContactUsPage(driver)
         self.home_page = HomePage(driver)
+        self.project_page = ProjectPage(driver)
         self.reg_page = RegPage(driver)
         self.secondary_page = SecondaryPage(driver)
         self.settings_page = SettingsPage(driver)
-        self.project_page = ProjectPage(driver)
+        self.user_guide_page = UserGuidePage(driver)

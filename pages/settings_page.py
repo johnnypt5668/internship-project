@@ -16,7 +16,7 @@ class SettingsPage(Page):
     PROJECT_BUTTON = (By.CSS_SELECTOR, "a[href='/add-a-project']")
     COMMUNITY_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Community']")
     CONTACT_US_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Contact us']")
-
+    USER_GUIDE_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='User guide']")
 
     def click_edit_profile_button(self):
         self.click(*self.EDIT_PROFILE_BUTTON)
@@ -29,6 +29,9 @@ class SettingsPage(Page):
 
     def click_contact_us_button(self):
         self.click(*self.CONTACT_US_BUTTON)
+
+    def click_user_guide_button(self):
+        self.click(*self.USER_GUIDE_BUTTON)
 
     def input_name(self, name):
         input_testname = self.find_element(*self.PROFILE_NAME_BOX)
