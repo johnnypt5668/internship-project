@@ -8,3 +8,4 @@ Feature: User Guide page test
     Then Click on the Settings button
     And Click on User Guide button
     Then Verify User Guide page opened
+    And Verify User Guide video has title

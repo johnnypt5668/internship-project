@@ -22,3 +22,5 @@ Feature: Settings Page test
     Then Click on the Settings button
     Then Change language to Russiian with button on top right
     Then Verify language has changed to RU
+
+

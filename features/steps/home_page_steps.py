@@ -34,6 +34,11 @@ def click_on_main_menu_button(context):
 def switch_to_new_page(context):
     context.app.home_page.switch_to_new_page()
 
+@then ('Verify correct page is open')
+def verify_correct_page(context):
+    sleep(10)
+    context.app.home_page.verify_correct_page()
+
 
 
 @then ('Click on Secondary button')

@@ -52,6 +52,10 @@ def click_community_button(context):
 def click_on_contact_us_button(context):
     context.app.settings_page.click_contact_us_button()
 
-@then('CLick on User Guide button')
-def click_on_user_guide_button(context):
+@then('Click on User Guide button')
+def click_user_guide_button(context):
     context.app.settings_page.click_user_guide_button()
+
+@then('Click on Change password button')
+def click_change_password_button(context):
+    context.app.settings_page.click_change_password_button()

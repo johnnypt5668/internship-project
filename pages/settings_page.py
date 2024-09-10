@@ -17,6 +17,7 @@ class SettingsPage(Page):
     COMMUNITY_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Community']")
     CONTACT_US_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Contact us']")
     USER_GUIDE_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='User guide']")
+    CHANGE_PASSWORD_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Change password']")
 
     def click_edit_profile_button(self):
         self.click(*self.EDIT_PROFILE_BUTTON)
@@ -32,6 +33,9 @@ class SettingsPage(Page):
 
     def click_user_guide_button(self):
         self.click(*self.USER_GUIDE_BUTTON)
+
+    def click_change_password_button(self):
+        self.click(*self.CHANGE_PASSWORD_BUTTON)
 
     def input_name(self, name):
         input_testname = self.find_element(*self.PROFILE_NAME_BOX)
@@ -71,4 +75,3 @@ class SettingsPage(Page):
         actual_text = self.find_element(*self.RU_MAIN_MENU).text
         expected_text = 'Главное меню'
         assert expected_text in actual_text, f"Expected {expected_text}, got {actual_text}"
-

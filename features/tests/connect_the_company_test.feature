@@ -8,3 +8,4 @@ Feature: Connect the Company test
     Then Click on Connect the Company button
     Then Switch to new window
     Then Verify correct page is open
+    And Verify Change password button is clickable
