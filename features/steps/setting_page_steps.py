@@ -59,3 +59,7 @@ def click_user_guide_button(context):
 @then('Click on Change password button')
 def click_change_password_button(context):
     context.app.settings_page.click_change_password_button()
+
+@then('Click on Subscription button')
+def click_subscription_button(context):
+    context.app.settings_page.click_subscription_button()
