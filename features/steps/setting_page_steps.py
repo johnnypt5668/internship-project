@@ -63,3 +63,27 @@ def click_change_password_button(context):
 @then('Click on Subscription button')
 def click_subscription_button(context):
     context.app.settings_page.click_subscription_button()
+
+@then('Click on Support button')
+def click_support_button(context):
+    context.app.settings_page.click_support_button()
+
+@then('Click on News button')
+def click_news_button(context):
+    context.app.settings_page.click_news_button()
+
+@then ('Switch to Support page')
+def switch_to_new_page(context):
+    context.app.home_page.switch_to_new_page()
+
+@then('Verify Settings page opened')
+def verify_settings_page_opened(context):
+    context.app.settings_page.verify_settings_page_opened()
+
+@then('Verify number of Settings page buttons')
+def verify_settings_page_buttons(context):
+    context.app.settings_page.verify_settings_buttons()
+
+@then('Verify Connect the Company button is clickable')
+def verify_connect_company_button_clickable(context):
+    context.app.settings_page.verify_connect_company_button_clickable()

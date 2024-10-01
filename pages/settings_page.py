@@ -3,6 +3,7 @@ from pages.base_page import Page
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from time import sleep
+from selenium.webdriver.support import expected_conditions as EC
 
 class SettingsPage(Page):
 
@@ -15,10 +16,15 @@ class SettingsPage(Page):
     RU_MAIN_MENU = (By.XPATH, "//div[@class='menu-button-text' and text()='Главное меню']")
     PROJECT_BUTTON = (By.CSS_SELECTOR, "a[href='/add-a-project']")
     COMMUNITY_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Community']")
+    CONNECT_COMPANY_BUTTON = (By.CSS_SELECTOR, "a[href='/book-presentation']")
     CONTACT_US_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Contact us']")
     USER_GUIDE_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='User guide']")
     CHANGE_PASSWORD_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Change password']")
     SUBSCRIPTION_BUTTON = (By.XPATH, "//a[@href='/subscription']")
+    SUPPORT_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Support']")
+    NEWS_BUTTON = (By.XPATH, "//div[@class='setting-text'and text()='News']")
+    SETTINGS_BUTTONS = (By.CSS_SELECTOR, "div[class='setting-text']")
+
 
     def click_edit_profile_button(self):
         self.click(*self.EDIT_PROFILE_BUTTON)
@@ -40,6 +46,12 @@ class SettingsPage(Page):
 
     def click_subscription_button(self):
         self.click(*self.SUBSCRIPTION_BUTTON)
+
+    def click_support_button(self):
+        self.click(*self.SUPPORT_BUTTON)
+
+    def click_news_button(self):
+        self.click(*self.NEWS_BUTTON)
 
     def input_name(self, name):
         input_testname = self.find_element(*self.PROFILE_NAME_BOX)
@@ -79,3 +91,18 @@ class SettingsPage(Page):
         actual_text = self.find_element(*self.RU_MAIN_MENU).text
         expected_text = 'Главное меню'
         assert expected_text in actual_text, f"Expected {expected_text}, got {actual_text}"
+
+    def switch_to_new_page(self):
+        self.wait.until(EC.new_window_is_opened)
+        all_windows = self.driver.window_handles
+        self.driver.switch_to.window(all_windows[1])
+
+    def verify_settings_page_opened(self):
+        self.verify_partial_url('/settings')
+
+    def verify_settings_buttons(self):
+        settings_buttons = self.find_elements(*self.SETTINGS_BUTTONS)
+        assert len(settings_buttons) == 13,f'Expected 13 ssettings buttons, got {len(settings_buttons)}'
+
+    def verify_connect_company_button_clickable(self):
+        self.wait_until_visible(self.CONNECT_COMPANY_BUTTON)

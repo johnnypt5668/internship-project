@@ -8,6 +8,7 @@ from pages.registration_page import RegPage
 from pages.secondary_page import SecondaryPage
 from pages.settings_page import SettingsPage
 from pages.subscription_page import SubscriptionPage
+from pages.support_page import SupportPage
 from pages.user_guide_page import UserGuidePage
 
 
@@ -23,4 +24,5 @@ class Application:
         self.secondary_page = SecondaryPage(driver)
         self.settings_page = SettingsPage(driver)
         self.subscription_page = SubscriptionPage(driver)
+        self.support_page = SupportPage(driver)
         self.user_guide_page = UserGuidePage(driver)
