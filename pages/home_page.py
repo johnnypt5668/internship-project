@@ -47,8 +47,11 @@ class HomePage(Page):
     def click_secondary_button(self):
         self.driver.find_element(By.XPATH, "//a[@href='/secondary-listings']").click()
 
+    #def click_mobile_secondary_button(self):
+    #    self.driver.find_element(By.XPATH, "//a[@wized='mobileTabGame']").click()
+
     def click_mobile_secondary_button(self):
-        self.driver.find_element(By.XPATH, "//a[@wized='mobileTabGame']").click()
+        self.driver.find_element(By.XPATH, "//div[@class='menu-button-text' and text()='Secondary']").click()
 
     def type_email_and_password(self, email, password):
         self.input_text(email, *self.SIGNIN_PAGE_EMAIL_BOX)
