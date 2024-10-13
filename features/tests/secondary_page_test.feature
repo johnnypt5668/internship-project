@@ -10,3 +10,13 @@ Feature: Secondary Page Test
     And Verify Secondary page is open
     Then Go to final page using pagination button
     Then Return to first page using pagination button
+
+  Scenario: User can filter Secondary page by "want to sell" option
+    Given Open the main page
+    When Enter email and password to login
+    Then Click on mobile Secondary button
+    And Verify Secondary page is open
+    Then Click on Filters tab
+    And Filter by Want to sell
+    And Click Apply Filter at page bottom
+    Then Confirm all properties have For sale tag
