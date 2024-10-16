@@ -30,6 +30,10 @@ def click_on_filters_tab(context):
 def click_want_to_sell_tab(context):
     context.app.secondary_page.click_want_to_sell_tab()
 
+@then('Filter by Want to buy')
+def click_want_to_buy_tab(context):
+    context.app.secondary_page.click_want_to_buy_tab()
+
 @then('Click Apply Filter at page bottom')
 def click_apply_filter_button(context):
     context.app.secondary_page.click_apply_filter_button()
@@ -37,3 +41,7 @@ def click_apply_filter_button(context):
 @then('Confirm all properties have For sale tag')
 def verify_for_sale_tag_on_all_boxes(context):
     context.app.secondary_page.verify_for_sale_tag_visible()
+
+@then('Confirm all properties have Want to buy tag')
+def verify_want_to_buy_tag_on_all_boxes(context):
+    context.app.secondary_page.verify_want_to_buy_tag_visible()

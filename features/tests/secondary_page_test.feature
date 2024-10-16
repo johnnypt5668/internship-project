@@ -20,3 +20,13 @@ Feature: Secondary Page Test
     And Filter by Want to sell
     And Click Apply Filter at page bottom
     Then Confirm all properties have For sale tag
+
+  Scenario: Use can filter Secondary page by 'want to buy' option
+    Given Open the main page
+    When Enter email and password to login
+    Then Click on mobile Secondary button
+    And Verify Secondary page is open
+    Then Click on Filters tab
+    And Filter by Want to buy
+    And Click Apply Filter at page bottom
+    Then Confirm all properties have Want to buy tag
