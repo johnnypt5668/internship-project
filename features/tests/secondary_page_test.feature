@@ -30,3 +30,14 @@ Feature: Secondary Page Test
     And Filter by Want to buy
     And Click Apply Filter at page bottom
     Then Confirm all properties have Want to buy tag
+
+  Scenario: User can filter Secondary page by Unit price range
+    Given Open the main page
+    When Enter email and password to login
+    Then Click on mobile Secondary button
+    And Verify Secondary page is open
+    Then Click on Filters tab
+    And Input price in From box under Unit price (AED)
+    And Input price in To box under Unit price (AED)
+    And Click Apply Filter at page bottom
+    Then Verify property price is in range given

@@ -45,3 +45,15 @@ def verify_for_sale_tag_on_all_boxes(context):
 @then('Confirm all properties have Want to buy tag')
 def verify_want_to_buy_tag_on_all_boxes(context):
     context.app.secondary_page.verify_want_to_buy_tag_visible()
+
+@then('Input price in From box under Unit price (AED)')
+def input_price_in_from_unit_price_box(context):
+    context.app.secondary_page.input_from_price('1200000')
+
+@then('Input price in To box under Unit price (AED)')
+def input_price_in_to_unit_price_box(context):
+    context.app.secondary_page.input_to_price('2000000')
+
+@then("Verify property price is in range given")
+def verify_property_price_in_range_given(context):
+    context.app.secondary_page.verify_price_in_range()
