@@ -10,6 +10,7 @@ class HomePage(Page):
     SIGNIN_PAGE_PASSWORD_BOX = (By.CSS_SELECTOR, "input[name='Password']")
     SIGNIN_BUTTON = (By.CSS_SELECTOR, "a[class='login-button w-button']")
     CONNECT_COMPANY_BUTTON = (By.CSS_SELECTOR, "div[class='get-free-period menu']")
+    OFF_PLAN_BUTTON = (By.CSS_SELECTOR, "a[class='_1-link-menu w-inline-block w--current']")
     SETTINGS_BUTTON = (By.CSS_SELECTOR, "a[href='/settings']")
     MAIN_MENU_BUTTON = (By.CSS_SELECTOR, "a[href='/main-menu']")
 
@@ -30,7 +31,8 @@ class HomePage(Page):
     def click_settings_button(self):
         self.click(*self.SETTINGS_BUTTON)
 
-
+    def click_off_plan_button(self):
+        self.click(*self.OFF_PLAN_BUTTON)
 
     def switch_to_new_page(self ):
         self.wait.until(EC.new_window_is_opened)

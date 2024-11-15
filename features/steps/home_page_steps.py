@@ -49,3 +49,7 @@ def click_secondary_button(context):
 @then ('Click on mobile Secondary button')
 def click_mobile_secondary_button(context):
     context.app.home_page.click_mobile_secondary_button()
+
+@then ('Click on off plan button')
+def click_off_plan_button(context):
+    context.app.home_page.click_off_plan_button()
