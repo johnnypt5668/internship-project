@@ -39,3 +39,11 @@ def click_apply_off_plan_filter_button(context):
 @then("Verify Off Plan price is in range given")
 def verify_off_plan_price_in_range_given(context):
     context.app.off_plan_page.verify_off_plan_price_in_range()
+
+@then("Verify properties have title on each")
+def verify_off_plan_title_in_each_card(context):
+    context.app.off_plan_page.verify_off_plan_cards_have_titles()
+
+@then("Verify properties have image on each")
+def verify_off_plan_cards_have_images(context):
+    context.app.off_plan_page.verify_off_plan_cards_have_images()

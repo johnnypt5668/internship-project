@@ -21,3 +21,12 @@ Feature: Off Plan Page test
     And Input price in Off Plan To box under Unit price (AED)
     Then Click Off Plan Apply Filter at page bottom
     Then Verify Off Plan price is in range given
+
+
+  Scenario: Verify properties on off plan page have pictures and titles
+    Given Open the main page
+    When Enter email and password to login
+    Then Click on off plan button
+    And Verify off plan page is open
+    Then Verify properties have title on each
+    And Verify properties have image on each

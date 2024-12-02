@@ -14,6 +14,9 @@ class OffPlanPage(Page):
     OFF_PLAN_FROM_PRICE_BOX = (By.CSS_SELECTOR, "input[wized='unitPriceFromFilter']")
     OFF_PLAN_TO_PRICE_BOX = (By.CSS_SELECTOR, "input[wized='unitPriceToFilter']")
     APPLY_OFF_PLAN_FILTER_BUTTON = (By.CSS_SELECTOR, "a[wized='applyFilterButton']")
+    OFF_PLAN_FOR_SALE_BOX = (By.CSS_SELECTOR, "a[wized='cardOfProperty']")
+    OFF_PLAN_TITLE_BOX = (By.CLASS_NAME, "project-name")
+    OFF_PLAN_IMAGE_BOX = (By.CLASS_NAME, "project-image")
 
 
     def verify_off_plan_page_opened(self):
@@ -64,3 +67,18 @@ class OffPlanPage(Page):
         for price in sale_prices:
             price_text = price.text.replace("AED", "").replace(",", "").strip()
             assert from_value <= int(price_text) <= to_value, f"Expected price to be between {from_value} and {to_value}, got {price_text}"
+
+    def verify_off_plan_cards_have_titles(self):
+        for_sale_boxes = self.find_elements(*self.OFF_PLAN_FOR_SALE_BOX)
+        off_plan_title_box = self.find_elements(*self.OFF_PLAN_TITLE_BOX)
+        assert len(off_plan_title_box) == len(for_sale_boxes), f"Expected {len(for_sale_boxes)}, got {len(off_plan_title_box)}"
+
+    def verify_off_plan_cards_have_images(self):
+        for_sale_boxes = self.find_elements(*self.OFF_PLAN_FOR_SALE_BOX)
+        off_plan_image_box = self.find_elements(*self.OFF_PLAN_IMAGE_BOX)
+        assert len(off_plan_image_box) == len(for_sale_boxes), f"Expected {len(for_sale_boxes)}, got {len(off_plan_image_box)}"
+
+    #def verify_for_sale_tag_visible(self):
+    #    for_sale_boxes = self.find_elements(*self.FOR_SALE_BOX)
+    #    for_sale_tags = self.find_elements(*self.FOR_SALE_TAG)
+    #    assert len(for_sale_tags) == len(for_sale_boxes), f"Expected {len(for_sale_boxes)}, got {len(for_sale_tags)}"
