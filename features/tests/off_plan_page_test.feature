@@ -30,3 +30,11 @@ Feature: Off Plan Page test
     And Verify off plan page is open
     Then Verify properties have title on each
     And Verify properties have image on each
+
+  Scenario: Verify Out of Stocks filter is available for users
+    Given Open the main page
+    When Enter email and password to login
+    Then Click on off plan button
+    And Verify off plan page is open
+    Then Click on Sales Status button and Out of Stock dropdown
+    Then Verify all boxes have Out of Stock tag

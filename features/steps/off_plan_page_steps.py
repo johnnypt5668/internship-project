@@ -47,3 +47,11 @@ def verify_off_plan_title_in_each_card(context):
 @then("Verify properties have image on each")
 def verify_off_plan_cards_have_images(context):
     context.app.off_plan_page.verify_off_plan_cards_have_images()
+
+@then("Click on Sales Status button and Out of Stock dropdown")
+def click_out_of_stock_dropdown(context):
+    context.app.off_plan_page.select_out_of_stock_dropdown()
+
+@then("Verify all boxes have Out of Stock tag")
+def verify_out_of_stock_text_is_in_boxes(context):
+    context.app.off_plan_page.verify_out_of_stock_tage_appears_in_boxes()
