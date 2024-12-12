@@ -18,6 +18,7 @@ class OffPlanPage(Page):
     OFF_PLAN_TITLE_BOX = (By.CLASS_NAME, "project-name")
     OFF_PLAN_IMAGE_BOX = (By.CLASS_NAME, "project-image")
     OFF_PLAN_STATUS_BOX = (By.CSS_SELECTOR, "div[wized='projectStatus'")
+    FIRST_PRODUCT = (By.CLASS_NAME, "project-image")
 
 
 
@@ -95,6 +96,7 @@ class OffPlanPage(Page):
         for box in boxes:
             self.verify_text('Out of stock', *self.OFF_PLAN_STATUS_BOX)
 
-    # def verify_text(self, expected_text, *locator):
-    #     actual_text = self.find_element(*locator).text
-    #     assert actual_text == expected_text, f'Expected {expected_text}, but got {actual_text}'
+    def click_on_first_product(self):
+        self.wait_until_clickable_click(self.FIRST_PRODUCT)
+
+   

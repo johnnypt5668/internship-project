@@ -38,3 +38,11 @@ Feature: Off Plan Page test
     And Verify off plan page is open
     Then Click on Sales Status button and Out of Stock dropdown
     Then Verify all boxes have Out of Stock tag
+
+  Scenario: Verify user can click on property visualization option
+    Given Open the main page
+    When Enter email and password to login
+    Then Click on off plan button
+    And Click on first product
+    Then Verify architecture visualization is visible
+    And Verify architecture visualization is clickable

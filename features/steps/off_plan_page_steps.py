@@ -55,3 +55,7 @@ def click_out_of_stock_dropdown(context):
 @then("Verify all boxes have Out of Stock tag")
 def verify_out_of_stock_text_is_in_boxes(context):
     context.app.off_plan_page.verify_out_of_stock_tage_appears_in_boxes()
+
+@then("Click on first product")
+def click_first_product_button(context):
+    context.app.off_plan_page.click_on_first_product()
