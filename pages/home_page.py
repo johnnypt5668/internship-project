@@ -13,6 +13,7 @@ class HomePage(Page):
     OFF_PLAN_BUTTON = (By.CSS_SELECTOR, "a[class='_1-link-menu w-inline-block w--current']")
     SETTINGS_BUTTON = (By.CSS_SELECTOR, "a[href='/settings']")
     MAIN_MENU_BUTTON = (By.CSS_SELECTOR, "a[href='/main-menu']")
+    MARKET_BUTTON = (By.CSS_SELECTOR, "a[href='/market-companies']")
 
 
 
@@ -42,9 +43,8 @@ class HomePage(Page):
     def click_main_menu_button(self):
         self.click(*self.MAIN_MENU_BUTTON)
 
-
-        
-
+    def click_market_button(self):
+        self.click(*self.MARKET_BUTTON)
 
     def click_secondary_button(self):
         self.driver.find_element(By.XPATH, "//a[@href='/secondary-listings']").click()

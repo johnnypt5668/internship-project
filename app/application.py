@@ -4,6 +4,7 @@ from pages.community_page import CommunityPage
 from pages.contact_us_page import ContactUsPage
 from pages.first_product_page import FirstProductPage
 from pages.home_page import HomePage
+from pages.market_page import MarketPage
 from pages.off_plan_page import OffPlanPage
 from pages.project_page import ProjectPage
 from pages.registration_page import RegPage
@@ -22,6 +23,7 @@ class Application:
         self.contact_us_page = ContactUsPage(driver)
         self.first_product_page = FirstProductPage(driver)
         self.home_page = HomePage(driver)
+        self.market_page = MarketPage(driver)
         self.off_plan_page = OffPlanPage(driver)
         self.project_page = ProjectPage(driver)
         self.reg_page = RegPage(driver)

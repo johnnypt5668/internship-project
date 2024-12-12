@@ -25,10 +25,13 @@ def click_on_connect_button(context):
 def click_on_settings_button(context):
     context.app.home_page.click_settings_button()
 
-
 @then ('Click on the Main Menu button')
 def click_on_main_menu_button(context):
     context.app.home_page.click_main_menu_button()
+
+@then('Click on market button on left side of page')
+def click_on_market_button(context):
+    context.app.home_page.click_market_button()
 
 @then ('Switch to new window')
 def switch_to_new_page(context):
