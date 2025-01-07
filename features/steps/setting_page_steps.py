@@ -72,6 +72,10 @@ def click_support_button(context):
 def click_news_button(context):
     context.app.settings_page.click_news_button()
 
+@then('Click on Verification button')
+def click_verification_button(context):
+    context.app.settings_page.click_verification_button()
+
 @then ('Switch to Support page')
 def switch_to_new_page(context):
     context.app.home_page.switch_to_new_page()

@@ -24,6 +24,7 @@ class SettingsPage(Page):
     SUPPORT_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Support']")
     NEWS_BUTTON = (By.XPATH, "//div[@class='setting-text'and text()='News']")
     SETTINGS_BUTTONS = (By.CSS_SELECTOR, "div[class='setting-text']")
+    VERIFICATION_BUTTON = (By.CSS_SELECTOR, "a[href='/verification/step-0']")
 
 
     def click_edit_profile_button(self):
@@ -52,6 +53,9 @@ class SettingsPage(Page):
 
     def click_news_button(self):
         self.click(*self.NEWS_BUTTON)
+
+    def click_verification_button(self):
+        self.click(*self.VERIFICATION_BUTTON)
 
     def input_name(self, name):
         input_testname = self.find_element(*self.PROFILE_NAME_BOX)
