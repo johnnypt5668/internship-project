@@ -9,4 +9,11 @@ Feature: Market page test
     And Verify market page is open
     Then Go to final market page using pagination button
     Then Return to first market page using pagination button
-    # Enter steps here
+
+  Scenario: Verify user can open market tab and filter by developer button
+    Given Open the main page
+    When Enter email and password to login
+    Then Click on market button on left side of page
+    And Verify market page is open
+    Then Click on Developers button
+    And Verify developers have license tag displayed
