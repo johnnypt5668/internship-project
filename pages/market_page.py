@@ -12,6 +12,8 @@ class MarketPage(Page):
     FINAL_MARKET_PAGE = (By.CSS_SELECTOR, "div[wized='totalPageMarket')]")
     DEVELOPERS_BUTTON = (By.CSS_SELECTOR, "div[wized='marketTagDevelopers']")
     LICENSE_BOX = (By.CSS_SELECTOR, "div[class='license-txt']")
+    ADD_COMPANY_BUTTON = (By.CSS_SELECTOR, "a[href='/presentation-for-the-agency']")
+    PUBLISH_BUTTON_TOP = (By.CSS_SELECTOR, "a[class='publish-button w-button']")
 
     def verify_market_page_open(self):
         self.verify_partial_url('market-companies')
@@ -33,3 +35,12 @@ class MarketPage(Page):
         tags = self.find_elements(*self.LICENSE_BOX)
         for tag in tags:
             self.verify_text('License', *self.LICENSE_BOX)
+
+    def click_add_company_button(self):
+        self.wait_until_clickable_click(self.ADD_COMPANY_BUTTON)
+
+    def verify_add_company_page_open(self):
+        self.verify_partial_url('presentation-for-the-agency')
+
+    def verify_publish_my_company_button_visible(self):
+        self.wait_until_visible(self.PUBLISH_BUTTON_TOP)

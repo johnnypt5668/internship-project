@@ -32,3 +32,16 @@ def return_to_first_page(context):
 @then('Verify developers have license tag displayed')
 def verify_developers_license_tag(context):
     context.app.market_page.verify_license_appears_in_tags()
+
+@then('Click Add company button in top right corner')
+def click_on_add_company_button(context):
+    context.app.market_page.click_add_company_button()
+
+@then("Verify Add company page is open")
+def verify_add_company_page_open(context):
+    context.app.market_page.verify_add_company_page_open()
+
+@then('Verify Publish my company button is visible')
+def verify_publish_company_button_visible(context):
+    context.app.market_page.verify_publish_my_company_button_visible()
+
